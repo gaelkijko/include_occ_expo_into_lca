@@ -577,8 +577,8 @@ if __name__ == '__main__':
     #global severity base
     severity_base = data_severity[0]
     
-    print severity_base
-    sys.exit()
+    #print severity_base
+    #sys.exit()
     
     
     try:

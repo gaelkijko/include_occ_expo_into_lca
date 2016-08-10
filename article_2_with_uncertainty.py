@@ -42,7 +42,7 @@ def cumul(time_stp,nb_iter,IO_sector_list,task_for_cumul,kill_switch_cumul):
         with open(os.path.join("results_art_2","IO_results",'IO_sector_data_' + time_stp + '.csv'), 'ab') as csvfile_sector_data:
             writen_file_data_boot = csv.writer(csvfile_IO_sector_data_boot, delimiter=';')
             writen_file_data = csv.writer(csvfile_sector_data, delimiter=';')
-            writen_file_data.writerow(['IO sector','Direct Cancer Cases','Direct Cancer Cases median','Direct Cancer Cases 2.5 percentile','Direct Cancer Cases 97.5 percentile',
+            writen_file_data.writerow(['IO commodity','Direct Cancer Cases','Direct Cancer Cases median','Direct Cancer Cases 2.5 percentile','Direct Cancer Cases 97.5 percentile',
             'Direct Cancer Impact','Direct Cancer Impact median','Direct Cancer Impact 2.5 percentile','Direct Cancer Impact 97.5 percentile',
             'Total Cancer Cases','Total Cancer Cases median','Total Cancer Cases 2.5 percentile','Total Cancer Cases 97.5 percentile',
             'Total Cancer Impact','Total Cancer Impact median','Total Cancer Impact 2.5 percentile','Total Cancer Impact 97.5 percentile',
@@ -157,7 +157,7 @@ def writing(tasks_to_be_written,kill_switch_writing,time_stp):
     import csv
     with open(os.path.join("results_art_2","IO_results",'IO_chem_couple_data_' + time_stp + '.csv'), 'ab') as csvfile_couple_data:
         writen_file = csv.writer(csvfile_couple_data, delimiter=';')
-        writen_file.writerow(['IO sector','CAS','Direct Cancer Cases','Direct Cancer Cases median','Direct Cancer Cases 2.5 percentile','Direct Cancer Cases 97.5 percentile',
+        writen_file.writerow(['IO commodity','CAS','Direct Cancer Cases','Direct Cancer Cases median','Direct Cancer Cases 2.5 percentile','Direct Cancer Cases 97.5 percentile',
         'Direct Cancer Impact','Direct Cancer Impact median','Direct Cancer Impact 2.5 percentile','Direct Cancer Impact 97.5 percentile',
         'Total Cancer Cases','Total Cancer Cases median','Total Cancer Cases 2.5 percentile','Total Cancer Cases 97.5 percentile',
         'Total Cancer Impact','Total Cancer Impact median','Total Cancer Impact 2.5 percentile','Total Cancer Impact 97.5 percentile',
@@ -366,7 +366,7 @@ if(__name__ == "__main__"):
     count_tasks = 0
     with open(os.path.join("results_art_2","IO_results",'IO_chem_couples_' + time_stamp + '.csv'), 'ab') as csvfile_couple_data:
         writen_file = csv.writer(csvfile_couple_data, delimiter=';')
-        writen_file.writerow(['IO sector','chem','direct inventory len','direct inventory sum','total inventory len','total inventory sum','initial classif with concentrations','nb EF cancer','nb EF non cancer','breathing rate','nb SF non cancer','nb SF cancer'])
+        writen_file.writerow(['IO commodity','chem','direct inventory len','direct inventory sum','total inventory len','total inventory sum','initial classif with concentrations','nb EF cancer','nb EF non cancer','breathing rate','nb SF non cancer','nb SF cancer'])
         for IO_sector in IO_sectors_list:
             if IO_sector not in tot_inventory_per_doll: #case where the IO sector does not call any other sector
                 continue
